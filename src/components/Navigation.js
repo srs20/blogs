@@ -23,7 +23,7 @@ const navLinks = [
     }
 ]
 
-const Navigation = () =>{
+const Navigation = ({user}) =>{
     return(
         <nav className='site-navigation'>
             <span className='menu-title'>My Blogs</span>
@@ -39,6 +39,7 @@ const Navigation = () =>{
                 </ul>
                 <span>
                     <Avatar src="https://joeschmoe.io/api/v1/random" size={38} />
+                    <span className='menu-avatar-name'>{`${user.firstName} ${user.lastName}`}</span>
                 </span>
                 
             </div>

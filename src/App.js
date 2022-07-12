@@ -6,10 +6,16 @@ import PageRenderer from './page-renderer';
 
 
 function App() {
+
+  const user = {
+    firstName: 'Test',
+    lastName: 'test'
+  }
+
   return (
     <Router>
       <div className="App">
-        <Navigation />
+        <Navigation user={user}/>
           <Routes>
             <Route path="/:page" element={<PageRenderer />} />
             <Route path="/" element={<Navigate to="/home" />} />
