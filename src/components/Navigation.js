@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Avatar } from 'antd';
+
 
 const navLinks = [
     {
@@ -24,18 +26,23 @@ const navLinks = [
 const Navigation = () =>{
     return(
         <nav className='site-navigation'>
-            <span>My Blogs</span>
-            <ul>
-                {
-                    navLinks.map((link, index) => (
-                        <Link to={link.path} key={index}>
-                            <li>{link.title}</li>
-                        </Link>
-                        
-                    ))
-                }
-
-            </ul>
+            <span className='menu-title'>My Blogs</span>
+            <div className='menu-content-container'>
+                <ul>
+                    {
+                        navLinks.map((link, index) => (
+                            <Link to={link.path} key={index}>
+                                <li>{link.title}</li>
+                            </Link> 
+                        ))
+                    }
+                </ul>
+                <span>
+                    <Avatar src="https://joeschmoe.io/api/v1/random" size={38} />
+                </span>
+                
+            </div>
+            
         </nav>
     );
 };
